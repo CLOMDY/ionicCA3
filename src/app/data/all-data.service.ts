@@ -58,61 +58,61 @@ export class AllDataService {
         subtitle: 'Some data',
         image: '../../../assets/burger.svg',
         price: 150,
-        bgcolor: "#b93040"
+        bgcolor: "#bf3242"
       },
 
       {
         id: 2,
-        title: 'Food',
+        title: 'Drink',
         subtitle: 'Some data',
         image: '../../../assets/cocktail.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#2962d5"
       },
 
       {
         id: 3,
-        title: 'Food',
+        title: 'Burger',
         subtitle: 'Some data',
         image: '../../../assets/dish.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#cb7f07"
       },
 
       {
-        id: 3,
-        title: 'Food',
+        id: 4,
+        title: 'Pizza',
         subtitle: 'Some data',
         image: '../../../assets/cookies.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#2acd65"
       },
 
       {
-        id: 3,
-        title: 'Food',
+        id: 5,
+        title: 'Mexican',
         subtitle: 'Some data',
         image: '../../../assets/noodle.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#4a54ff"
       },
 
       {
-        id: 3,
-        title: 'Food',
+        id: 6,
+        title: 'Desert',
         subtitle: 'Some data',
         image: '../../../assets/pizza.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#e73c50"
       },
 
       {
-        id: 3,
-        title: 'Food',
+        id: 7,
+        title: 'Noodle',
         subtitle: 'Some data',
         image: '../../../assets/taco.svg',
         price: 50,
-        bgcolor: "#b93040"
+        bgcolor: "#37baff"
       }
     ]
 
