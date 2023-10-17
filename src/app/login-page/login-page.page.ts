@@ -5,9 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login-page.page.html',
   styleUrls: ['./login-page.page.scss'],
 })
-export class LoginPagePage implements OnInit {
-
+export class LoginPagePage implements OnInit
+{
+  login_email:any;
+  login_password:any;
   constructor() { }
+
+  loginForm(e:any)
+  {
+    console.log("crequested Data: ",e.value);
+  }
 
   ngOnInit() {
   }

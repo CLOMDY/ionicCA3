@@ -7,20 +7,22 @@
   </div>
   <div style="height: 550px;">
     <div style="justify-content: center; display: flex; align-items: center;">
-      <form>
+      <form #form = "ngForm">
         <ion-item lines="full">
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="text" required></ion-input>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="email" required="required" name="login_email" #email="ngModel" [(ngModel)]="login_email"></ion-input>
         </ion-item>
+        <p *ngIf="email.errors && email.dirty" style="color: red; font-size: 12px;">This field is required!</p>
     
         <ion-item lines="full">
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" required></ion-input>
+          <ion-input type="password" required="required" name="login_password" #password="ngModel" minlength="5" maxlength="12" [(ngModel)]="login_password"></ion-input>
         </ion-item>
+        <p *ngIf="password.errors && password.dirty" style="color: red; font-size: 12px;">Password between 5 to 12 charcters!</p>
         <br>
         <ion-row>
           <ion-col>
-            <ion-button type="submit" color="danger" expand="block">Log In</ion-button>
+            <ion-button type="submit" color="danger" expand="block" (click) = "loginForm(form)" [disabled] = "!form.valid" [routerLink]="'/'">Log In</ion-button>
             <br>
             <br>
             <a class="small-text">Forgot Password?</a>
