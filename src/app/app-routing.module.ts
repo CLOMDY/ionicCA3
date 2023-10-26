@@ -8,7 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'landing-page',
+    path: '',
     loadChildren: () => import('./landing-page/landing-page.module').then( m => m.LandingPagePageModule)
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./sign-page/sign-page.module').then( m => m.SignPagePageModule)
   },
   {
-    path: '',
+    path: 'menu-page',
     loadChildren: () => import('./menu-page/menu-page.module').then( m => m.MenuPagePageModule)
   },
   {
@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'checkout-page',
     loadChildren: () => import('./checkout-page/checkout-page.module').then( m => m.CheckoutPagePageModule)
   },
+  {
+    path: 'view',
+    loadChildren: () => import('./view/view.module').then( m => m.ViewPageModule)
+  },
+
 ];
 
 @NgModule({
