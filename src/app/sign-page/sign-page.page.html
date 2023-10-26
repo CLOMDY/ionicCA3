@@ -13,16 +13,15 @@
             <ion-col>
               <ion-item lines="full">
                 <ion-label position="floating">First Name</ion-label>
-                <ion-input type="text" required="required" name="signin_firstname" #fname="ngModel" minlength="5" maxlength="10" [ngModel]="signin_firstname"></ion-input>
+                <ion-input type="text" required="required" name="signin_firstname" #fname="ngModel" maxlength="10" [ngModel]="signin_firstname"></ion-input>
               </ion-item>
               <p *ngIf="fname.errors && fname.dirty" style="color: red; font-size: 12px;">This field is required!</p>
             </ion-col>
             <ion-col>
               <ion-item lines="full">
                 <ion-label position="floating">Last Name</ion-label>
-                <ion-input type="text" required="required" name="signin_lastname" #lname="ngModel" minlength="5" maxlength="10" [ngModel]="signin_lastname"></ion-input>
+                <ion-input type="text" required="required" name="signin_lastname" maxlength="10"></ion-input>
               </ion-item>
-              <p *ngIf="lname.errors && lname.dirty" style="color: red; font-size: 12px;">This field is required!</p>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -53,7 +52,7 @@
         <br>
         <ion-row>
           <ion-col>
-            <ion-button type="submit" color="danger" expand="block" (click) = "signinForm(form)" [disabled] = "!form.valid" [routerLink]="'/'">Sign In</ion-button>
+            <ion-button type="submit" color="danger" expand="block" (click) = "signinForm(form)" [disabled] = "!form.valid" [routerLink]="'../menu-page/'">Sign In</ion-button>
           </ion-col>
         </ion-row>
         <br>
