@@ -1,7 +1,6 @@
 <swiper-container style="margin: 10px;" slides-per-view = 1.1>
   <swiper-slide style="border-radius: 20px; color: black;" *ngFor = "let data of alldata">
-    <a href="../../dish-page/" style="text-decoration: none;">
-      <div style="margin: 5px; background-color: rgb(255, 255, 255); padding: 15px; border-radius: 20px;">
+      <div (click)="showModal(data)" style="margin: 5px; background-color: rgb(255, 255, 255); padding: 15px; border-radius: 20px;">
         <img src ="{{data.image}}" style="border-radius: 20px;">
         <div style="margin-top: 5px;">
           <div style="font-size: large; font-weight: bolder; color: black;">
@@ -15,6 +14,5 @@
           </div>
         </div>
       </div>
-    </a>
   </swiper-slide>
 </swiper-container>

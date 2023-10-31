@@ -17,8 +17,9 @@
     </ion-grid>
   </div>
 
-  <ion-searchbar style="background-color: white; border-radius: 20px; margin: 10px; max-height: 50px; max-width: 355px;"></ion-searchbar>
-  
+  <ion-searchbar
+    style="background-color: white; border-radius: 20px; margin: 10px; max-height: 50px; max-width: 355px;"></ion-searchbar>
+
   <div style="margin-left: 5px; margin-right: 5px;">
     <ion-grid fixed>
       <ion-row>
@@ -34,10 +35,10 @@
     </ion-grid>
   </div>
   <div>
-    <app-slider [alldata]="allpopularData"></app-slider>
+    <app-slider (selectedSlide)="showModal($event)" [alldata]="allpopularData"></app-slider>
   </div>
 
-  
+
 
   <div style="margin-left: 5px; margin-right: 5px;">
     <ion-grid fixed>
@@ -76,4 +77,341 @@
   <div>
     <app-slider [alldata]="alldrinkData"></app-slider>
   </div>
+
+  <ion-modal [isOpen]="show" style="margin-top: 60px; border-radius: 20px 20px 0px 0px; box-shadow: 0px 0px 100px 0px black;">
+    <ng-template>
+      <ion-content>
+        <div style="background-color: rgb(215, 213, 213);">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div style="font-size: larger; font-weight: bolder; padding-left: 10px; padding-top: 14px;">
+                  Dishes Details
+                </div>
+              </ion-col>
+              <ion-col size="2">
+                <button style="background-color: rgb(215, 213, 213); font-size: 30px; color: black; padding: 10px;" (click)="showModal($event)"><ion-icon name="arrow-down-circle-outline"></ion-icon></button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col style="margin: 5px; border-radius: 10px; padding: 10px; background-color: white;">
+              <img src="{{modalData.image}}" style="border-radius: 10px; box-shadow: black 0px 0px 6px 0px;"><br>
+              <div style="margin: 10px;">
+                <div>
+                  <ion-row>
+                    <ion-col size="1.2">
+                      <img src="../../assets/Non_veg_symbol.svg.png">
+                    </ion-col>
+                    <ion-col>
+                      <span
+                        style="background-color: rgb(229, 187, 4); color: white; border-radius: 5px; font-size: 10px; padding: 3px;">Bestseller</span>
+                      <div
+                        style="border: 2px solid #fb485f; border-radius: 19px; max-width: fit-content; padding-left: 22px; float: right; font-size: larger; font-weight: bold; background-color: #ffcece; color: #fb485f;">
+                        <ion-toggle aria-label="Warning toggle" color="danger" [checked]="false">FAV</ion-toggle>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </div>
+
+                <div style="font-size: 27px; font-weight: bold; margin-top: -7px;">
+                  {{modalData.title}}
+                </div>
+
+                <div
+                  style="color: #ed8728; font-weight: bolder; border: 1px solid #ed8728; height: 27px; max-width: fit-content; padding: 0px 5px 0px 5px; border-radius: 5px; background-color: #ffd1a5;">
+                  &#9733; &#9733; &#9733; &#9733; &#9734;
+                </div>
+
+                <div style="margin-top: 5px; text-align: justify; color: rgb(121, 121, 121);">
+                  {{modalData.contain}}
+                </div>
+                <br>
+                <div class="ion-margin ion-text-center">
+                  <div style="font-weight: bold; font-size: 20px; margin-bottom: 5px;">
+                    BLEND
+                  </div>
+                  <span style="color: rgb(121, 121, 121);">
+                    {{modalData.blend}}
+                  </span>
+                </div>
+
+                <div class="ion-margin ion-padding ion-text-center"
+                  style="background-color: rgb(230, 230, 230); box-shadow: 0px 0px 100px 10px rgb(197, 197, 197); border-radius: 10px;">
+                  <div style="font-weight: bold; font-size: 20px;">
+                    REVIEW
+                  </div>
+                  <div class="ion-text-start ion-margin" style="max-width: 80%;">
+                    <h5><b>Alison B.</b></h5>
+                    “Their brunch is awesome, I love the avocado toast and the California focaccia. Pizza is really good
+                    as
+                    well.”
+                  </div>
+                  <div class="ion-text-end ion-margin" style="max-width: 80%; float: right;">
+                    <h5><b>Kristine R.</b></h5>
+                    “This is always our breakfast stop before heading home from vacation. Always delicious. Always great
+                    service. Always worth the stop.”
+                  </div>
+                  <div class="ion-text-start ion-margin" style="max-width: 80%;">
+                    <h5><b>Eric T.</b></h5>
+                    “One of the best places I’ve eaten on Cape Cod. Great cocktails, awesome.”
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div style="margin: 10px; font-style: italic;">
+          People also adds
+        </div>
+
+        <swiper-container slides-per-view=2.2 style="margin: 5px; margin-bottom: 80px;">
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6"
+                    style="padding: 0px; height: 80px; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 0px 0px rgb(177, 177, 177);">
+                    <img src="../../assets/alcohol.jpg"
+                      style="height: 100%; width: 100%; border-radius: 10px 0px 0px 10px;">
+                  </ion-col>
+                  <ion-col size="6"
+                    style="height: 80px; border-radius: 0px 10px 10px 0px; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 0px 0px rgb(177, 177, 177); padding: 5px 0px 0px 0px;">
+                    <span style="font-weight: bold; margin-left: 5px; margin-top: 5px;">Drink</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">Alcohol</span><br>
+                    <span style="font-size: smaller; margin-left: 5px; color: rgb(131, 130, 130);">₹ 55</span>
+                    <div>
+                      <button
+                        style="width: 100%; background-color: #fb485f; height: 27px; border-radius: 0px 0px 10px 0px;">
+                        ADD
+                      </button>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+
+        <div
+          style="height: 70px; position: fixed; z-index: 3; bottom: 0px; width: 100%; background-color: white; border-radius: 20px 20px 0px 0px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <div
+                  style="border: red solid 2px; border-radius: 20px; padding: 12px 0px 12px 0px; background-color: #ffcece;"
+                  class="ion-text-center">
+                  <button
+                    style="background-color: #ffcece;; color: red; float: left; height: 45px; width: 30px; border-radius: 20px 0px 0px 20px; position: relative; top: -11px; font-size: 20px; font-weight: bold;">
+                    -
+                  </button>
+                  <span style="font-size: 20px; font-weight: bold;">
+                    1
+                  </span>
+                  <button
+                    style="background-color: #ffcece;; color: red; float: right; height: 45px; width: 30px; border-radius: 0px 20px 20px 0px; position: relative; top: -11px; font-size: 20px; font-weight: bold;">
+                    +
+                  </button>
+                </div>
+              </ion-col>
+              <ion-col size="8">
+                <div>
+                  <button
+                    style="background-color: #fb485f; width: 100%; border-radius: 20px; font-size: 20px; color: white; padding: 15px;">
+                    Add Item ₹250
+                  </button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { AllDataService } from '../data/all-data.service';
 
@@ -13,6 +13,8 @@ export class MenuPagePage implements OnInit {
   allpopularData: any[] = [];
   allcatData: any[] = [];
   alldrinkData: any[] = [];
+  show = false;
+  modalData:any;
   constructor(private menudata: AllDataService) { }
 
   ngOnInit()
@@ -20,6 +22,12 @@ export class MenuPagePage implements OnInit {
     this.allpopularData = this.menudata.getpopularData();
     this.allcatData = this.menudata.getcategorydata();
     this.alldrinkData = this.menudata.getdrinkdata();
+  }
+
+  showModal(data:any){
+    this.show = !this.show;
+    this.modalData = data;
+    console.log(data);
   }
 
 }

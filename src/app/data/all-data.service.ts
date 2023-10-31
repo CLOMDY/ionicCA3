@@ -7,50 +7,51 @@ export class AllDataService {
   allpopular: any[] = [];
   allCategory: any[] = [];
   alldrink: any[] = [];
-  constructor()
-  {
+  constructor() {
     this.allpopular = [
       {
         id: 1,
         title: 'Chicken',
-        subtitle: 'Some data about chicken',
+        contain: 'The Best Indian Chicken Recipes, all in one Place! These dishes are so easy that anyone can make and every one will love.In this page, we bring to you better than restaurant quality authentic Indian chicken dishes that are a staple in the Indian restaurants and homes.',
+        blend:"This chicken seasoning is a dry mix of herbs and spices that adds a unique zing to any chicken dish. It has just the right amount of heat and flavor to make your guests beg for more. Don't be scared by the long ingredient list; most of it is spices you probably have in your cupboard. Note that this also gives chili a great flavor without adding too much heat.",
+        subtitle: 'Some data about chicken nothing less nothing more',
         image: '../../../assets/chicken.jpg',
-        price: 150
+        price: 550
       },
 
       {
         id: 2,
         title: 'Burger',
-        subtitle: 'Some data about Burger',
+        subtitle: 'Some data about Burger nothing less nothing more',
         image: '../../../assets/burger.jpeg',
-        price: 50
+        price: 350
       },
 
       {
         id: 3,
         title: 'Fish',
-        subtitle: 'Some data about Fish',
+        subtitle: 'Some data about Fish nothing less nothing more',
         image: '../../../assets/fish.jpeg',
-        price: 50
+        price: 450
       },
 
       {
         id: 4,
         title: 'Thali',
-        subtitle: 'Some data about Thali',
+        subtitle: 'Some data about Thali nothing less nothing more',
         image: '../../../assets/thali.jpg',
-        price: 50
+        price: 250
       },
 
       {
         id: 5,
         title: 'Patty',
-        subtitle: 'Some data about Patty',
+        subtitle: 'Some data about Patty nothing less nothing more',
         image: '../../../assets/patty.jpeg',
-        price: 50
+        price: 200
       }
     ]
-  
+
     this.allCategory = [
       {
         id: 1,
@@ -159,18 +160,15 @@ export class AllDataService {
     ]
   }
 
-  getpopularData()
-  {
+  getpopularData() {
     return this.allpopular;
   }
 
-  getcategorydata()
-  {
+  getcategorydata() {
     return this.allCategory;
   }
 
-  getdrinkdata()
-  {
+  getdrinkdata() {
     return this.alldrink;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -9,8 +9,14 @@ register();
 })
 export class SliderComponent  implements OnInit {
   @Input() alldata: any[] = [];
+  @Output() selectedSlide: EventEmitter<any> = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {}
+
+  showModal(data:any){
+    this.selectedSlide.emit(data);
+  }
 
 }

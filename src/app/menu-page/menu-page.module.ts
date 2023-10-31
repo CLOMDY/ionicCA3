@@ -18,5 +18,7 @@ import { CommonModuleModule } from '../components/common-module/common-module.mo
     CommonModuleModule
   ],
   declarations: [MenuPagePage],
+
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MenuPagePageModule {}
