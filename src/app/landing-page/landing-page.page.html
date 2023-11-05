@@ -1,6 +1,10 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kenia&family=Lobster&family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
+
 <ion-content>
     <span id="top"></span>
-    <div style="background-color: rgb(195, 195, 195); position: fixed; z-index: 3; width: 100%;">
+    <div class="topDiv">
         <ion-grid>
             <ion-row>
                 <ion-col size="6">
@@ -32,20 +36,88 @@
     </div>
 
     <img src="../../assets/tabel.gif" style="position: fixed; margin-top: 79px; height: 588px; width: 375px;">
-    <img src="../../assets/ionic.gif" style="position: fixed; bottom: 0px; mix-blend-mode: multiply; z-index: 3;">
-
-    <div style="margin-top: 88px; margin-bottom: 214px;">
+    
+    <div style="margin-top: 88px;">
         <ion-grid>
             <ion-row>
-                <ion-col>
-                    <swiper-container [loop]="true">
-                        <swiper-slide>Slide 1</swiper-slide>
-                        <swiper-slide>Slide 2</swiper-slide>
-                        <swiper-slide>Slide 3</swiper-slide>
-                      </swiper-container>
+                <ion-col class="ourView">
+                    <div class="popular">
+                        OUR LOCATION
+                    </div>
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000}">
+                        <swiper-slide>
+                            <img src="../../assets/patna.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/bangalore.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/mumbai.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/hyderabad.jpeg" class="slideCss" style="width: 100%;">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/delhi.webp" class="slideCss">
+                        </swiper-slide>
+                    </swiper-container>
+                    <div class="name">
+                        <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000,reverseDirection:true}">
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    PATNA
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    DELHI
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    HYDERABAD
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    MUMBAI
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    BANGALORE
+                                </div>
+                            </swiper-slide>
+                        </swiper-container>
+                    </div>
                 </ion-col>
             </ion-row>
-
+            
+            <ion-row>
+                <ion-col class="ourView">
+                    <div class="popular">
+                        OUR VIEW
+                    </div>
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000}">
+                        <swiper-slide>
+                            <img src="../../assets/view 1.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/view 2.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/view 3.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/view 4.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/view 5.webp" class="slideCss">
+                        </swiper-slide>
+                    </swiper-container>
+                </ion-col>
+            </ion-row>
+            
             <ion-row>
                 <ion-col class="knowYourChef">
                     KNOW YOUR CHEF
@@ -54,106 +126,151 @@
 
             <ion-row>
                 <ion-col class="chef">
-                    <img src="../../assets/chef 1.jpg">
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000,reverseDirection:true}">
+                        <swiper-slide>
+                            <img src="../../assets/chef 1.png">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/chef 3.png">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/chef 2.png">
+                        </swiper-slide>
+                    </swiper-container>
                 </ion-col>
-
+                
                 <ion-col class="chefInfo">
-                    <b>Gordon</b>
-                    <div class="hr"></div>
-                    Halwai<div class="hr"></div>
-                    1yr<div class="hr"></div>
-                    <i>Ravioli</i>
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true, delay:1000}">
+                        <swiper-slide>
+                            <b>Gordon</b>
+                            <div class="hr"></div>
+                            Butcher<div class="hr"></div>
+                            6yr<div class="hr"></div>
+                            <i>Rack of Lamb</i>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <b>Rachael Ray</b>
+                            <div class="hr"></div>
+                            Grill<div class="hr"></div>
+                            4yr<div class="hr"></div>
+                            <i>Chicken Chili</i>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <b>Jamie Oliver</b>
+                            <div class="hr"></div>
+                            Sauté<div class="hr"></div>
+                            10yr<div class="hr"></div>
+                            <i>Steak Sarnie</i>
+                        </swiper-slide>
+                    </swiper-container>
                 </ion-col>
             </ion-row>
 
             <ion-row>
-                <ion-col class="chefInfo">
-                    <b>Mamta Behn</b>
-                    <div class="hr"></div>
-                    CM<div class="hr"></div>
-                    TDA<div class="hr"></div>
-                    <i>Mach Bhat</i>
-                </ion-col>
-
-                <ion-col class="chef">
-                    <img src="../../assets/chef 2.jpg">
+                <ion-col class="ourView">
+                    <div class="popular">
+                        POPULAR DISHES
+                    </div>
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000}">
+                        <swiper-slide>
+                            <img src="../../assets/chicken.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/patty.jpeg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/fish.jpeg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/thali.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/burger.jpeg" class="slideCss">
+                        </swiper-slide>
+                    </swiper-container>
+                    <div class="name">
+                        <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000,reverseDirection:true}">
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    CHICKEN
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    BURGER
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    THALI
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    FISH
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    PATTY
+                                </div>
+                            </swiper-slide>
+                        </swiper-container>
+                    </div>
                 </ion-col>
             </ion-row>
 
             <ion-row>
-                <ion-col class="chef">
-                    <img src="../../assets/chef 3.png">
-                </ion-col>
-
-                <ion-col class="chefInfo">
-                    <b>Ramu Kaka</b>
-                    <div class="hr"></div>
-                    Bavarchi<div class="hr"></div>
-                    10yr<div class="hr"></div>
-                    <i>Nun Roti</i>
-                </ion-col>
-            </ion-row>
-
-            <ion-row>
-                <ion-col class="lorem">
-                    At [Restaurant Name], we are passionate about sharing the authentic flavors of [Cuisine] with our
-                    guests. Our chef uses only the freshest ingredients and prepares each dish with traditional cooking
-                    methods.
-
-                    From our classic [Dish] to our more adventurous [Dish], we have something to satisfy every taste. We
-                    also have a wide selection of drinks, including [Beverage], [Beverage], and [Beverage].
-
-                    Whether you're a longtime fan of [Cuisine] or you're trying it for the first time, we invite you to
-                    experience the authentic flavors of [Restaurant Name].
-
-                    Call to action:Make a reservation today or order online for pickup or delivery.
-
-
-                </ion-col>
-            </ion-row>
-
-            <ion-row>
-                <ion-col class="lorem" style="height: 600px;">
-
-                    Sure, here are some more examples of restaurant website intros:
-
-                    Family-friendly:
-
-                    Headline:Where families come together to create lasting memories.
-
-                    Subheadline:[Restaurant Name] is the perfect place for a delicious meal and a fun time for the whole
-                    family.
-
-                    Body:
-
-                    At [Restaurant Name], we believe that families are the heart of our community. That's why we're
-                    committed to creating a welcoming and family-friendly atmosphere.
-
-                    Our menu features a variety of kid-friendly dishes, as well as healthier options for adults. We also
-                    have a kids' play area, so your little ones can burn off some energy while you enjoy your meal.
-
-                    Whether you're celebrating a special occasion or simply spending time with your loved ones,
-                    [Restaurant Name] is the perfect place to create lasting memories.
-
-                    Call to action:Make a reservation today and experience the best that family dining has to offer.
-
-                    Quick service:
-
-                    Headline:Fast, fresh, and delicious food on the go.
-
-                    Subheadline:At [Restaurant Name], we believe that you shouldn't have to sacrifice quality for
-                    convenience.
-
-                    Body:
-
-                    We offer a variety of quick service options, including made-to-order sandwiches, salads, and wraps.
-                    We also have a wide selection of snacks and drinks.
-
-                    Our food is made with fresh, high-quality ingredients and prepared with care. We know that you're
-                    busy, so we're committed to getting your food to you quickly and without sacrificing quality.
-
-                    Whether you're on your way to work, school, or the ballgame, [Restaurant Name] is the perfect place
-                    to grab a quick and delicious meal.
+                <ion-col class="ourView">
+                    <div class="popular">
+                        POPULAR DRINKS
+                    </div>
+                    <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000}">
+                        <swiper-slide>
+                            <img src="../../assets/alcohol.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/shake.webp" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/lemonade.jpg" class="slideCss">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/cold.jpeg" class="slideCss" style="width: 100%;">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <img src="../../assets/coffee.webp" class="slideCss">
+                        </swiper-slide>
+                    </swiper-container>
+                    <div class="name">
+                        <swiper-container [loop]="true" [speed]="1000" [autoplay]="{enable:true,delay:1000,reverseDirection:true}">
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    ALCOHOL
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    COFFEE
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    COLD DRINK
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    LEMONADE
+                                </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="popularDishName">
+                                    SHAKE
+                                </div>
+                            </swiper-slide>
+                        </swiper-container>
+                    </div>
                 </ion-col>
             </ion-row>
 
@@ -166,4 +283,5 @@
             </ion-row>
         </ion-grid>
     </div>
+    <img src="../../assets/ionic.gif" style="mix-blend-mode: multiply; z-index: 3;">
 </ion-content>

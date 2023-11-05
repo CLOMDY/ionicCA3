@@ -30,4 +30,21 @@ export class MenuPagePage implements OnInit {
     console.log(data);
   }
 
+  count = 1;
+
+  increment() {
+    this.count++;
+  }
+
+  decrement() {
+    if (this.count>1) {
+      this.count--;
+    }
+  }
+
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 }
